@@ -1,8 +1,41 @@
 * {
   box-sizing: border-box;
 }
+
 .grid-main {
-  width: 420px;
-  height: 420px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  width: 400px;
   border: solid black 1px;
+}
+
+.grid-col-span-4 {
+  grid-column: span 4;
+}
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+#calc-screen {
+  text-align: right;
+  font-size: 2rem;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+.numpad {
+  font-size: 1rem;
+}
+#btn-slash,
+#btn-minus,
+#btn-times,
+#btn-plus,
+#btn-point,
+#btn-pos-neg,
+#btn-remove-last {
+  color: rgb(72, 114, 206);
+}
+#btn-equals {
+  background-color: rgb(255, 183, 49);
 }
