@@ -1,1 +1,21 @@
 console.log("Hello there!\nGeneral Kenobi!");
+
+let btnSlash = document.getElementById("btn-slash");
+let btnMinus = document.getElementById("btn-minus");
+let btnTimes = document.getElementById("btn-times");
+let btnPlus = document.getElementById("btn-plus");
+let btnClear = document.getElementById("btn-clear");
+let btnPosNeg = document.getElementById("btn-pos-neg");
+let btnRemoveLast = document.getElementById("btn-remove-last");
+let btnPoint = document.getElementById("btn-point");
+let btnEquals = document.getElementById("btn-equals");
+let btnNine = document.getElementById("btn-nine");
+let btnEight = document.getElementById("btn-eight");
+let btnSeven = document.getElementById("btn-seven");
+let btnSix = document.getElementById("btn-six");
+let btnFive = document.getElementById("btn-five");
+let btnFour = document.getElementById("btn-four");
+let btnThree = document.getElementById("btn-three");
+let btnTwo = document.getElementById("btn-two");
+let btnOne = document.getElementById("btn-one");
+let btnZero = document.getElementById("btn-zero");
