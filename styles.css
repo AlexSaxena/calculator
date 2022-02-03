@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+.grid-main {
+  width: 420px;
+  height: 420px;
+  border: solid black 1px;
+}
