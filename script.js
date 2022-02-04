@@ -44,3 +44,8 @@ nums.forEach((num) => {
 btnClear.addEventListener("click", () => {
   calcScreen.value = null;
 });
+
+// Removes latest Number
+btnRemoveLast.addEventListener("click", () => {
+  calcScreen.value = calcScreen.value.slice(0, -1);
+});
