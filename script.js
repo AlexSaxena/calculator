@@ -8,7 +8,7 @@ let btnPlus = document.getElementById("btn-plus");
 let btnClear = document.getElementById("btn-clear");
 let btnPosNeg = document.getElementById("btn-pos-neg");
 let btnRemoveLast = document.getElementById("btn-remove-last");
-let btnPoint = document.getElementById("btn-point");
+let btnDot = document.getElementById("btn-point");
 let btnEquals = document.getElementById("btn-equals");
 
 // Numbers
@@ -48,4 +48,12 @@ btnClear.addEventListener("click", () => {
 // Removes latest Number
 btnRemoveLast.addEventListener("click", () => {
   calcScreen.value = calcScreen.value.slice(0, -1);
+});
+
+// Single use of the point sign
+btnDot.addEventListener("click", () => {
+  let check = calcScreen.value;
+  if (check.indexOf(".") == -1) {
+    calcScreen.value += ".";
+  }
 });
