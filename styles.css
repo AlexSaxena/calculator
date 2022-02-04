@@ -4,6 +4,7 @@
 .flex {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .grid-main {
@@ -11,7 +12,7 @@
   grid-template-columns: repeat(4, 1fr);
 
   width: 400px;
-  height: 450px;
+  height: 550px;
   border: solid black 1px;
 }
 
@@ -25,9 +26,9 @@
 #calc-screen {
   text-align: right;
   font-size: 2rem;
-  min-height: 10%;
   background-color: black;
   color: white;
+  max-width: 100%;
 }
 .numpad {
   font-size: 1rem;
