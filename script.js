@@ -57,3 +57,13 @@ btnDot.addEventListener("click", () => {
     calcScreen.value += ".";
   }
 });
+
+// Change from Positive to Negative and back
+btnPosNeg.addEventListener("click", () => {
+  let test = calcScreen.value[0];
+  if (test != "-") {
+    calcScreen.value = "-" + calcScreen.value;
+  } else {
+    calcScreen.value = calcScreen.value.slice(1);
+  }
+});
