@@ -4,7 +4,7 @@ console.log("Hello there!\nGeneral Kenobi!");
 let btnSlash = document.getElementById("btn-slash");
 let btnMinus = document.getElementById("btn-minus");
 let btnTimes = document.getElementById("btn-times");
-let btnPlus = document.getElementById("btn-plus");
+let btnAddition = document.getElementById("btn-plus");
 let btnClear = document.getElementById("btn-clear");
 let btnPosNeg = document.getElementById("btn-pos-neg");
 let btnRemoveLast = document.getElementById("btn-remove-last");
@@ -28,6 +28,8 @@ let calcScreen = document.getElementById("calc-screen");
 let numpad = document.getElementsByClassName("numpad");
 let nums = document.querySelectorAll(".nums");
 let currentNumber = "";
+let operator = "";
+let firstValue = "";
 
 // gets nums NodeList -> forEach Num onClick add value to calcScreen
 nums.forEach((num) => {
@@ -43,6 +45,7 @@ nums.forEach((num) => {
 // Clear Screen
 btnClear.addEventListener("click", () => {
   calcScreen.value = null;
+  currentNumber = 0;
 });
 
 // Removes latest Number
@@ -63,7 +66,34 @@ btnPosNeg.addEventListener("click", () => {
   let test = calcScreen.value[0];
   if (test != "-") {
     calcScreen.value = "-" + calcScreen.value;
+    currentNumber = calcScreen.value;
   } else {
     calcScreen.value = calcScreen.value.slice(1);
+    currentNumber = calcScreen.value;
   }
+});
+
+/* 
+  - Operators -
+  Create operator btnEventlisteners. (+ - x /)
+  In each Event
+                - Take the CurrentNumber (from screen) and save in variable -> firstValue).
+                - Save Operator Choice in a global var.
+                - Set CurrentScreen value to 0
+                - Set CurrentNumber to 0
+
+
+  In Summary / Equal Event
+                           - Take New currentValue and save in Variable -> secondValue.
+                           - parseFloat firstValue & secondValue
+                           - Use Switch to check Operator and procced with calculation
+*/
+
+// Addition
+btnAddition.addEventListener("click", () => {
+  console.log(currentNumber);
+  firstValue = currentNumber;
+  operator = "+";
+  calcScreen.value = 0;
+  currentNumber = 0;
 });
