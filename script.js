@@ -67,7 +67,12 @@ btnRemoveLast.addEventListener("click", () => {
 btnDot.addEventListener("click", () => {
   let check = calcScreen.value;
   if (check.indexOf(".") == -1) {
-    calcScreen.value += ".";
+    if (check.length < 1) {
+      calcScreen.value += 0;
+      calcScreen.value += ".";
+    } else {
+      calcScreen.value += ".";
+    }
   }
 });
 
@@ -124,6 +129,9 @@ operators.forEach((operator) => {
 });
 
 // Summary Eventlistener
+btnEquals.addEventListener("click", () => {
+  alert("Equality");
+});
 
 // Addition function
 function addition(num1, num2) {
