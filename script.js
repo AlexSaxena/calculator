@@ -10,6 +10,7 @@ let btnPosNeg = document.getElementById("btn-pos-neg");
 let btnRemoveLast = document.getElementById("btn-remove-last");
 let btnDot = document.getElementById("btn-point");
 let btnEquals = document.getElementById("btn-equals");
+let operators = document.querySelectorAll(".operator");
 
 // Numbers
 let btnNine = document.getElementById("btn-nine");
@@ -28,7 +29,7 @@ let calcScreen = document.getElementById("calc-screen");
 let numpad = document.getElementsByClassName("numpad");
 let nums = document.querySelectorAll(".nums");
 let currentNumber = "";
-let operator = "";
+let operatorChoice = "";
 let firstValue = "";
 
 // gets nums NodeList -> forEach Num onClick add value to calcScreen
@@ -91,17 +92,31 @@ btnPosNeg.addEventListener("click", () => {
                                                     REASON: put all operators in ONE eventlistener and make functions
                                                             for operation later.
 
+                                                    NOTE: Add counter in OPERATOR | if more than 1 send arguments directly to Summary Event
+
   In Summary / Equal Event
                            - Take New currentValue and save in Variable -> secondValue.
                            - parseFloat firstValue & secondValue
                            - Use Switch to check Operator and procced with calculation
 */
 
-// Addition
-btnAddition.addEventListener("click", () => {
-  console.log(currentNumber);
-  firstValue = currentNumber;
-  operator = "+";
-  calcScreen.value = 0;
-  currentNumber = 0;
+// gets Operators NodeList -> forEach Operator onClick Save values, operatorChoice, resets values
+operators.forEach((operator) => {
+  operator.addEventListener("click", () => {
+    console.log(currentNumber);
+    firstValue = currentNumber;
+    operatorChoice = operator.value;
+    calcScreen.value = null;
+    currentNumber = 0;
+    console.log(
+      `FirstValue: ${firstValue}\nOperatorChoice: ${operatorChoice}\ncalScreen.value: ${calcScreen.value}\ncurrentNumber: ${currentNumber}`
+    );
+  });
 });
+
+// Summary Eventlistener
+
+// Addition function
+// Subtraction Function
+// Multiplication function
+// Division function
