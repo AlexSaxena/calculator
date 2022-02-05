@@ -83,6 +83,14 @@ btnPosNeg.addEventListener("click", () => {
                 - Set CurrentNumber to 0
 
 
+  OR ver2 | Take all operators and put in nodeList -> forEach to get operator and reset CurrentValue
+                                                    - Save Operator Choice in a global var. (operatorChoice = operator.value)
+                                                    - Save currentNumber in var firstValue.
+                                                    - Set CurrentScreen value to 0
+                                                    - Set CurrentNumber to 0
+                                                    REASON: put all operators in ONE eventlistener and make functions
+                                                            for operation later.
+
   In Summary / Equal Event
                            - Take New currentValue and save in Variable -> secondValue.
                            - parseFloat firstValue & secondValue
