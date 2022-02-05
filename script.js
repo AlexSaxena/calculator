@@ -31,15 +31,24 @@ let nums = document.querySelectorAll(".nums");
 let currentNumber = "";
 let operatorChoice = "";
 let firstValue = "";
+let solution = false;
 
 // gets nums NodeList -> forEach Num onClick add value to calcScreen
 nums.forEach((num) => {
   num.addEventListener("click", () => {
-    currentNumber = null;
-    if (calcScreen.value.length <= 17) {
+    if (solution != false) {
+      currentNumber = 0;
+      calcScreen.value = null;
       calcScreen.value += num.value;
+      currentNumber = calcScreen.value;
+      solution = false;
+    } else if (solution == false) {
+      currentNumber = 0;
+      if (calcScreen.value.length <= 17) {
+        calcScreen.value += num.value;
+      }
+      currentNumber = calcScreen.value;
     }
-    currentNumber = calcScreen.value;
   });
 });
 
@@ -117,6 +126,17 @@ operators.forEach((operator) => {
 // Summary Eventlistener
 
 // Addition function
+function addition(num1, num2) {
+  let parsedNum1 = parseFloat(num1);
+  let parsedNum2 = parseFloat(num2);
+  let answer = parsedNum1 + parsedNum2;
+  currentNumber = answer;
+  calcScreen.value = answer;
+  solution = true;
+
+  console.log(answer);
+}
+
 // Subtraction Function
 // Multiplication function
 // Division function
