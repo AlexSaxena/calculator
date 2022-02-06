@@ -25,8 +25,8 @@ let operators = document.querySelectorAll(".operator");
 // let btnZero = document.getElementById("btn-zero");
 
 // MISC
+// let numpad = document.getElementsByClassName("numpad");
 let calcScreen = document.getElementById("calc-screen");
-let numpad = document.getElementsByClassName("numpad");
 let nums = document.querySelectorAll(".nums");
 let currentNumber = "";
 let operatorChoice = "";
@@ -45,7 +45,7 @@ nums.forEach((num) => {
       solution = false;
     } else if (solution == false) {
       currentNumber = 0;
-      if (calcScreen.value.length <= 17) {
+      if (calcScreen.value.length <= 14) {
         calcScreen.value += num.value;
       }
       currentNumber = calcScreen.value;
@@ -84,6 +84,7 @@ btnDot.addEventListener("click", () => {
 });
 
 // Change from Positive to Negative and back
+// CHANGE NAME FROM TEST & ADD 0 IF EMPTY
 btnPosNeg.addEventListener("click", () => {
   let test = calcScreen.value[0];
   if (test != "-") {
