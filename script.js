@@ -194,9 +194,10 @@ function addition(num1, num2) {
   let parsedNum1 = parseFloat(num1);
   let parsedNum2 = parseFloat(num2);
   let answer = parsedNum1 + parsedNum2;
-  currentNumber = answer.toFixed(4);
-  calcScreen.value = answer.toFixed(4);
-  calcScreen.placeholder = answer.toFixed(4);
+  let rounded = Math.round((answer + Number.EPSILON) * 100) / 100;
+  currentNumber = rounded;
+  calcScreen.value = rounded;
+  calcScreen.placeholder = rounded;
   solution = true;
 }
 // Subtraction Function
@@ -204,9 +205,10 @@ function subtraction(num1, num2) {
   let parsedNum1 = parseFloat(num1);
   let parsedNum2 = parseFloat(num2);
   let answer = parsedNum1 - parsedNum2;
-  currentNumber = answer.toFixed(4);
-  calcScreen.value = answer.toFixed(4);
-  calcScreen.placeholder = answer.toFixed(4);
+  let rounded = Math.round((answer + Number.EPSILON) * 100) / 100;
+  currentNumber = rounded;
+  calcScreen.value = rounded;
+  calcScreen.placeholder = rounded;
   solution = true;
 }
 // Multiplication function
@@ -214,9 +216,10 @@ function multiplication(num1, num2) {
   let parsedNum1 = parseFloat(num1);
   let parsedNum2 = parseFloat(num2);
   let answer = parsedNum1 * parsedNum2;
-  currentNumber = answer.toFixed(4);
-  calcScreen.value = answer.toFixed(4);
-  calcScreen.placeholder = answer.toFixed(4);
+  let rounded = Math.round((answer + Number.EPSILON) * 100) / 100;
+  currentNumber = rounded;
+  calcScreen.value = rounded;
+  calcScreen.placeholder = rounded;
   solution = true;
 }
 // Division function
@@ -225,9 +228,10 @@ function division(num1, num2) {
     let parsedNum1 = parseFloat(num1);
     let parsedNum2 = parseFloat(num2);
     let answer = parsedNum1 / parsedNum2;
-    currentNumber = answer.toFixed(4);
-    calcScreen.value = answer.toFixed(4);
-    calcScreen.placeholder = answer.toFixed(4);
+    let rounded = Math.round((answer + Number.EPSILON) * 100) / 100;
+    currentNumber = rounded;
+    calcScreen.value = rounded;
+    calcScreen.placeholder = rounded;
     solution = true;
   } else if (num2 == 0) {
     calcScreen.value = "Lmao, Try again!";
