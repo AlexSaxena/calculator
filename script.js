@@ -130,7 +130,24 @@ operators.forEach((operator) => {
 
 // Summary Eventlistener
 btnEquals.addEventListener("click", () => {
-  alert("Equality");
+  switch (operatorChoice) {
+    case "+":
+      addition(firstValue, currentNumber);
+      console.log("plus");
+      break;
+    case "-":
+      console.log("minus");
+      subtraction(firstValue, currentNumber);
+      break;
+    case "x":
+      console.log("gånger");
+      multiplication(firstValue, currentNumber);
+      break;
+    case "/":
+      console.log("delat");
+      division(firstValue, currentNumber);
+      break;
+  }
 });
 
 // Addition function
