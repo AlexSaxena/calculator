@@ -84,11 +84,13 @@ btnDot.addEventListener("click", () => {
 });
 
 // Change from Positive to Negative and back
-// CHANGE NAME FROM TEST & ADD 0 IF EMPTY
 btnPosNeg.addEventListener("click", () => {
-  let test = calcScreen.value[0];
-  if (test != "-") {
+  let prefix = calcScreen.value[0];
+  if (prefix != "-") {
     calcScreen.value = "-" + calcScreen.value;
+    if (calcScreen.value.length < 2) {
+      calcScreen.value += "0";
+    }
     currentNumber = calcScreen.value;
   } else {
     calcScreen.value = calcScreen.value.slice(1);
