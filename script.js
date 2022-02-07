@@ -1,10 +1,6 @@
 console.log("Hello there!\nGeneral Kenobi!");
 
 // Operators
-// let btnSlash = document.getElementById("btn-slash");
-// let btnMinus = document.getElementById("btn-minus");
-// let btnTimes = document.getElementById("btn-times");
-// let btnAddition = document.getElementById("btn-plus");
 let btnClear = document.getElementById("btn-clear");
 let btnPosNeg = document.getElementById("btn-pos-neg");
 let btnRemoveLast = document.getElementById("btn-remove-last");
@@ -12,20 +8,7 @@ let btnDot = document.getElementById("btn-point");
 let btnEquals = document.getElementById("btn-equals");
 let operators = document.querySelectorAll(".operator");
 
-// Numbers
-// let btnNine = document.getElementById("btn-nine");
-// let btnEight = document.getElementById("btn-eight");
-// let btnSeven = document.getElementById("btn-seven");
-// let btnSix = document.getElementById("btn-six");
-// let btnFive = document.getElementById("btn-five");
-// let btnFour = document.getElementById("btn-four");
-// let btnThree = document.getElementById("btn-three");
-// let btnTwo = document.getElementById("btn-two");
-// let btnOne = document.getElementById("btn-one");
-// let btnZero = document.getElementById("btn-zero");
-
 // MISC
-// let numpad = document.getElementsByClassName("numpad");
 let calcScreen = document.getElementById("calc-screen");
 let nums = document.querySelectorAll(".nums");
 let currentNumber = "";
@@ -98,23 +81,6 @@ btnPosNeg.addEventListener("click", () => {
   }
 });
 
-/* 
-  Take all operators and put in nodeList -> forEach to get operator and reset CurrentValue
-                                                    - Save Operator Choice in a global var. (operatorChoice = operator.value)
-                                                    - Save currentNumber in var firstValue.
-                                                    - Set CurrentScreen value to 0
-                                                    - Set CurrentNumber to 0
-                                                    REASON: put all operators in ONE eventlistener and make functions
-                                                            for operation later.
-
-                                                    NOTE: Add counter in OPERATOR | if more than 1 send arguments directly to Summary Event
-
-  In Summary / Equal Event
-                           - Take New currentValue and save in Variable -> secondValue.
-                           - parseFloat firstValue & secondValue
-                           - Use Switch to check Operator and procced with calculation
-*/
-
 // gets Operators NodeList -> forEach Operator onClick Save values, operatorChoice, resets values
 // bool checks if true, do as usual if notTrue send 2 summary and set true
 operators.forEach((operator) => {
@@ -134,39 +100,12 @@ operators.forEach((operator) => {
       calcScreen.placeholder = firstValue;
       currentNumber = 0;
     }
-
-    // firstValue = currentNumber;
-    // operatorChoice = operator.value;
-    // calcScreen.value = null;
-    // calcScreen.placeholder = firstValue;
-    // currentNumber = 0;
-    // console.log(
-    //   `FirstValue: ${firstValue}\nOperatorChoice: ${operatorChoice}\ncalScreen.value: ${calcScreen.value}\ncurrentNumber: ${currentNumber}`
-    // );
   });
 });
 
 // Summary Eventlistener
 btnEquals.addEventListener("click", () => {
   active = false;
-  // switch (operatorChoice) {
-  //   case "+":
-  //     addition(firstValue, currentNumber);
-  //     console.log("plus");
-  //     break;
-  //   case "-":
-  //     console.log("minus");
-  //     subtraction(firstValue, currentNumber);
-  //     break;
-  //   case "x":
-  //     console.log("gånger");
-  //     multiplication(firstValue, currentNumber);
-  //     break;
-  //   case "/":
-  //     console.log("delat");
-  //     division(firstValue, currentNumber);
-  //     break;
-  // }
   summary(operatorChoice);
 });
 
